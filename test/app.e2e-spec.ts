@@ -83,7 +83,7 @@ describe('AppController (e2e)', () => {
 
   it('/posts (POST)', () => {
     return request(app.getHttpServer())
-      .post('/category')
+      .post('/posts')
       .send({ name: 'Новая категория' })
       .expect(201)
       .expect((res) => {
@@ -99,7 +99,7 @@ describe('AppController (e2e)', () => {
 
   it('/posts (GET)', () => {
     return request(app.getHttpServer())
-      .get('/category')
+      .get('/posts')
       .expect(200)
       .expect({
         id: 1,
