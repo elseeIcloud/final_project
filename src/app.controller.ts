@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Post, Request, UseGuards, Get } from '@nestjs/common';
 import { CreateUserDto } from './users/dto/create-user.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from 'src/auth/auth.service';
@@ -13,6 +13,11 @@ export class AppController {
     private readonly usersService: UsersService,
     private authService: AuthService,
   ) {}
+
+  @Get()
+  hello() {
+    return 'Hello World!';
+  }
 
   @ApiResponse({
     status: 201,
